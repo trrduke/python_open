@@ -40,9 +40,9 @@ forecast = m.predict(future)    #预测结果
 # print(forecast[forecast['ds']==datetime.datetime(2019,10,7)]['yhat'].values)
 # forecast[forecast['ds']==datetime.datetime(2019,10,7)]
 
-fig = m.plot_components(forecast)   #观察时间序列拆分图表
+# fig = m.plot_components(forecast)   #观察时间序列拆分图表
 
-fig = m.plot(forecast)  #时间序列图
+# fig = m.plot(forecast)  #时间序列图
 
 #单看节假日影响
 from fbprophet.plot import plot_forecast_component
