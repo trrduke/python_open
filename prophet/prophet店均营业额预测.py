@@ -57,7 +57,7 @@ future=future1[['ds','on_holiday','off_holiday']]
 
 forecast = m.predict(future)    #预测结果
 
-# print(df[(df['ds']>=rq[0])&(df['ds']<=rq[1])]['y'].corr(forecast[(forecast['ds']>=rq[0])&(forecast['ds']<=rq[1])]['yhat']))   #相关系数
+print(df[(df['ds']>=rq[0])&(df['ds']<=rq[1])]['y'].corr(forecast[(forecast['ds']>=rq[0])&(forecast['ds']<=rq[1])]['yhat']))   #相关系数
 # print(forecast[forecast['ds']==datetime.datetime(2019,10,7)]['yhat'].values)
 # forecast[forecast['ds']==datetime.datetime(2019,10,7)]
 
@@ -65,13 +65,14 @@ forecast = m.predict(future)    #预测结果
 
 # fig = m.plot(forecast)  #时间序列图
 
+'''
 #单看节假日影响
 from fbprophet.plot import plot_forecast_component
 plot_forecast_component(m
 #                         ,forecast
                         ,forecast[(forecast['ds']>=rq[0])&(forecast['ds']<=rq[1])]
                         , 'holiday_101')
-
+'''
 
 result=pd.merge(df,forecast[['ds','yhat','yhat_lower','yhat_upper']],how='right',left_on='ds',right_on='ds')    #筛选输出数据
 
