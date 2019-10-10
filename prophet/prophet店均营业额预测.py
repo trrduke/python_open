@@ -38,7 +38,11 @@ m = Prophet(holidays=holidays
 #             ,seasonality_prior_scale=0.01
 #             ,seasonality_mode='multiplicative'
            )   #实例化，引入节假日
-m.add_seasonality(name='weekly_off_holiday', period=7, fourier_order=3, condition_name='off_holiday')
+m.add_seasonality(name='weekly_off_holiday'
+                  , period=7
+                  , fourier_order=3
+                  # ,prior_scale=1
+                  , condition_name='off_holiday')
 # m.add_seasonality(name='yearly_off_holiday', period=365, fourier_order=10, condition_name='off_holiday')
 
 m.fit(
