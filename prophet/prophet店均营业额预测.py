@@ -16,13 +16,14 @@ df=turnovers_data[['business_date','y']]    #取得需要的数据
 
 df.rename(columns={'business_date':'ds'}, inplace = True)   #日期列列名必须是ds
 
-rq=[datetime.datetime(2019,9,25),datetime.datetime(2019,10,7)]
+rq=[datetime.datetime(2019,9,1),datetime.datetime(2019,9,30)]
 
 df1=pd.merge(df,date_info,how='left',left_on ='ds',right_on='date')
 
 def is_holiday(x):
 #     return (x['vacation_adult']==1 or x['day_after_vacation']==1 or x['day_before_vacation']==1)
-    return (x['vacation_adult']==1 )
+#     return (x['vacation_adult']==1 or x['day_before_vacation']==1)
+    return (x['vacation_adult']==1)
 
 df1['on_holiday']=df1.apply(is_holiday,axis=1)
 df1['off_holiday']=~df1.apply(is_holiday,axis=1)
@@ -31,7 +32,7 @@ df2=df1[['ds','y','on_holiday','off_holiday']]
 
 m = Prophet(holidays=holidays
             ,weekly_seasonality=False
-#             ,yearly_seasonality=False
+            # ,yearly_seasonality=False
 #             ,changepoint_prior_scale=0.01
 #             ,holidays_prior_scale=1000
 #             ,seasonality_prior_scale=0.01
@@ -42,7 +43,7 @@ m.add_seasonality(name='weekly_off_holiday', period=7, fourier_order=3, conditio
 
 m.fit(
     df2[
-        df2['ds']<=datetime.datetime(2019,9,30)
+        df2['ds']<=datetime.datetime(2019,8,31)
       ]
 ) #建模
 
