@@ -75,6 +75,9 @@ plot_forecast_component(m
                         , 'holiday_101')
 '''
 
-result=pd.merge(df,forecast[['ds','yhat','yhat_lower','yhat_upper']],how='right',left_on='ds',right_on='ds')    #筛选输出数据
+result=pd.merge(df1
+                # ,forecast[['ds','yhat','yhat_lower','yhat_upper']]
+                ,forecast
+                ,how='right',left_on='ds',right_on='ds')    #筛选输出数据
 
 result.to_excel('prophet_pred_reuslt.xlsx',index=False)  #输出结果
