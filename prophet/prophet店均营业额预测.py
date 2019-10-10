@@ -58,7 +58,7 @@ future=future1[['ds','on_holiday','off_holiday']]
 
 forecast = m.predict(future)    #预测结果
 
-print(df[(df['ds']>=rq[0])&(df['ds']<=rq[1])]['y'].corr(forecast[(forecast['ds']>=rq[0])&(forecast['ds']<=rq[1])]['yhat']))   #相关系数
+# print(df[(df['ds']>=rq[0])&(df['ds']<=rq[1])]['y'].corr(forecast[(forecast['ds']>=rq[0])&(forecast['ds']<=rq[1])]['yhat']))   #相关系数
 # print(forecast[forecast['ds']==datetime.datetime(2019,10,7)]['yhat'].values)
 # forecast[forecast['ds']==datetime.datetime(2019,10,7)]
 
