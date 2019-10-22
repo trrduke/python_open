@@ -1,4 +1,4 @@
-# 设置单独gitlab
+# 设置单个gitlab
 
 * 1. 在.ssh文件夹生成rsa文件
 
