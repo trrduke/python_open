@@ -24,23 +24,23 @@
 
 \# lacesar_gitlab
 
-Host repo.lacesar.com\# 这个名字一般和下面HostName一样
+`Host repo.lacesar.com`\# 这个名字一般和下面HostName一样
 
-HostName repo.lacesar.com\# github要用github.com，gitlab要用登陆后的网址
+`HostName repo.lacesar.com`\# github要用github.com，gitlab要用登陆后的网址
 
-PreferredAuthentications publickey\# 一般就是publickey
+`PreferredAuthentications publickey`\# 一般就是publickey
 
-IdentityFile ~/.ssh/lacesar\# 这里是路径和rsa文件的名称，就是上面设置的名称
+`IdentityFile ~/.ssh/lacesar`\# 这里是路径和rsa文件的名称，就是上面设置的名称
 
 \# personal_github
 
-Host github.com
+`Host github.com`
 
-HostName github.com
+`HostName github.com`
 
-PreferredAuthentications publickey
+`PreferredAuthentications publickey`
 
-IdentityFile ~/.ssh/mygit
+`IdentityFile ~/.ssh/mygit`
 
 * 4. 测试
 
