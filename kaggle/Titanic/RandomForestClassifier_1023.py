@@ -70,7 +70,7 @@ full_data['Title']=full_data['Title'].map(title_mapDict)
 
 full_data['FamilySize']=full_data['SibSp']+full_data['Parch']+1
 
-full_data.info()
+# full_data.info()
 
 oh_enc = full_data.loc[:, ['Sex', 'Cabin', 'Embarked', 'TicketInfo','Title']]
 enc = OneHotEncoder(categories='auto')
