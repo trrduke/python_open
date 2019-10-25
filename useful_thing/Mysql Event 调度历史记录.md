@@ -18,8 +18,7 @@
 
 二．根据以下建模板创建作业
 
-#请注意根据实际情况修改相关信息
-
+	#请注意根据实际情况修改相关信息
 	DELIMITER $$
 	CREATE DEFINER=`root`@`localhost` EVENT `e_test` ON SCHEDULE 
 	#修改以下调度信息
