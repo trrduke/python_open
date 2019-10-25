@@ -1,28 +1,28 @@
 # 设置单个gitlab
 
-##1. 在.ssh文件夹生成rsa文件
+## 1. 在.ssh文件夹生成rsa文件
 
 	
 	ssh-keygen -t rsa -C "tianrnerui@lacesar.com:10443"	# 默认名称id_rsa
 
-##2. 在gitlab上添加ssh公钥
+## 2. 在gitlab上添加ssh公钥
 
-##3. 测试是否设置成功
+## 3. 测试是否设置成功
 
 	
 	ssh git@repo.lacesar.com
 
 # 设置多个
-##1. 在.ssh文件夹生成rsa文件
+## 1. 在.ssh文件夹生成rsa文件
 
 	
 	
 	ssh-keygen -t rsa -C "tianrnerui@lacesar.com:10443"	# 端口有修改写在这里。回车后可以选择设置名称lacesar
     ssh-keygen -t rsa -C "525845526@qq.com"		# 设置名称mygit
 
-##2. 分别在两个网站添加ssh公钥
+## 2. 分别在两个网站添加ssh公钥
 
-##3. 在.ssh文件夹设置config文件
+## 3. 在.ssh文件夹设置config文件
 	
 	
 	# lacesar_gitlab
@@ -37,7 +37,7 @@
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/mygit
 
-##4. 测试
+## 4. 测试
 
 	
 	ssh git@github.com				# 这里@前面统一用git，后面用上面的Host
