@@ -3,17 +3,29 @@
 一．创建作业执行Event历史记录表
 
 `CREATE TABLE `mysql`.`t_event_history` (
+
   `dbname` VARCHAR(128) NOT NULL DEFAULT '',
+  
   `eventname` VARCHAR(128) NOT NULL DEFAULT '',
+  
   `starttime` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+  
   `endtime` DATETIME DEFAULT NULL,
+  
   `issuccess` INT(11) DEFAULT NULL,
+  
   `duration` INT(11) DEFAULT NULL,
+  
   `errormessage` VARCHAR(512) DEFAULT NULL,
+  
   `randno` INT(11) DEFAULT NULL,
+  
   PRIMARY KEY (`dbname`,`eventname`,`starttime`),
+  
   KEY `ix_endtime` (`endtime`),
+  
   KEY `ix_starttime_randno` (`starttime`,`randno`)
+  
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;`
 
 二．根据以下建模板创建作业
